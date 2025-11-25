@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+.orbitron {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.space-grotesk{
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+  background-color: #f8fafc;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header h1 {
+  font-family: "Orbitron";
+  font-size: 46px;
+  background: linear-gradient(to right, #dc2626, #b91c1c, #dc2626);
+  background-size: 200%;
+  color: transparent;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+  text-decoration: none;
+}
+
+main .wrapper {
+  height: 80px;
+  width: 100%;
+}
+
+main .apresentation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  height: auto;
+  min-height: 80vh;
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+main .apresentation .iframe p {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Space Grotesk";
+  color: rgba(0, 0, 0, 0.5)
+}
+
+main .apresentation iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+main .apresentation .information {
+  height: auto;
+  align-content: center;
+  font-family: "Space Grotesk";
+  text-align: left;
+  padding: 30px;
+}
+
+main .apresentation .information h1{
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+main .apresentation .information p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #6b7280;
+}
+
+main .apresentation .information .description {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+main .apresentation .information .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+main .apresentation .information .buttons a {
+  padding: 16px 24px;
+  border: 2px solid #dc2626;
+  border-radius: 12px;
+  color: #dc2626;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: "Space Grotesk";
+  font-size: 1rem;
+}
+
+main .apresentation .information .buttons a:hover {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+}
+
+@keyframes shine {
+  to {
+    background-position: 200%;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  main .apresentation {
+    gap: 30px;
+    padding: 30px;
+  }
+  
+  main .apresentation iframe {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  main .apresentation {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  main .apresentation .information {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  main .apresentation iframe {
+    height: 350px;
+  }
+  
+  main .apresentation .information h1 {
+    font-size: 2rem;
+  }
+  
+  header h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  main .apresentation {
+    padding: 15px;
+  }
+  
+  main .apresentation .information h1 {
+    font-size: 1.8rem;
+  }
+  
+  main .apresentation .information p {
+    font-size: 1rem;
+  }
+  
+  main .apresentation .information .buttons a {
+    padding: 14px 20px;
+    font-size: 0.9rem;
+  }
+}
