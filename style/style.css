@@ -35,7 +35,7 @@ header {
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px 0;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .header-content {
@@ -90,6 +90,24 @@ header h1 {
 .search-btn:hover {
   background: #b91c1c;
   transform: scale(1.05);
+}
+
+header .account-container button, main .login-window button {
+  font-family: 'Space Grotesk';
+  font-size: 24px;
+  background: #dc2626;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+header .account-container button:hover, main .login-window button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px #991b1b;
 }
 
 main .wrapper {
@@ -167,6 +185,72 @@ main .main-container .item-container a:hover {
   box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
 }
 
+main .login-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+main .login-window h2 {
+  font-family: 'Space Grotesk';
+  font-size: 36px;
+  font-weight: 700;
+}
+
+main .login-window form label {
+  font-size: 24px;
+  font-family: 'Space Grotesk';
+  display: block;
+}
+
+main .login-window form input {
+  padding: 10px;
+  font-size: 24px;
+  font-family: 'Space Grotesk';
+  outline: none;
+  background: transparent;
+  border: 3px solid red;
+  border-radius: 20px;
+}
+
+main .login-window button {
+  margin-top: 20px;
+}
+
+@keyframes aparecer {
+  from {
+    z-index: -2;
+    opacity: 0;
+  }
+
+  to {
+    z-index: 3;
+    opacity: 1;
+  }
+}
+
+@keyframes desaparecer {
+  from {
+    z-index: 3;
+    opacity: 1;
+  }
+
+  to {
+    z-index: -2;
+    opacity: 0;
+  }
+}
+
 @keyframes shine {
   to {
     background-position: 200%;
@@ -207,5 +291,154 @@ main .main-container .item-container a:hover {
   .search-input {
     width: 200px;
   }
+}
+
+main .add-piece-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: -3;
+    opacity: 0;
+}
+
+main .add-piece-form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+main .add-piece-form input,
+main .add-piece-form textarea {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+}
+
+main .add-piece-form button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    background: #dc2626;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+main .add-piece-form button:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
+
+main .add-piece-form label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 24px;
+    color: white;
+}
+
+/* Novo: dropzone visual para o 3D */
+.model-dropzone {
+    width: 320px;
+    height: 320px;
+    background: #e5e7eb; /* cinza claro */
+    border: 2px dashed #c7cdd6;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.12s, border-color 0.12s;
+    outline: none;
+    position: relative; /* necessário para o botão "Remover" */
+    overflow: hidden;
+}
+
+.model-dropzone:hover {
+    background: #e2e8f0;
+    transform: translateY(-4px);
+    border-color: #9ca3af;
+}
+
+.model-dropzone:focus {
+    box-shadow: 0 0 0 4px rgba(99,102,241,0.12);
+    border-color: #6366f1;
+}
+
+.model-dropzone.has-content {
+    background: #ffffff;
+    border-style: solid;
+    border-color: #d1d5db;
+    padding: 0;
+}
+
+.model-dropzone iframe.model-iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    border-radius: 10px;
+}
+
+.model-dropzone .remove-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    padding: 6px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.model-dropzone .remove-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.model-dropzone-text {
+    font-family: "Space Grotesk", sans-serif;
+    color: #374151;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* input oculto para manter compatibilidade com o form/JS */
+.hidden-model-input {
+    display: none;
+}
+
+.model-dropzone {
+    width: 320px;
+    height: 320px;
+    background: #e5e7eb; /* cinza claro */
+    border: 2px dashed #c7cdd6;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.12s, border-color 0.12s;
+    outline: none;
+    position: relative; /* necessário para o botão "Remover" */
+    overflow: hidden;
 }
 
