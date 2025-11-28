@@ -1,55 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BuscaPeças</title>
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="header-content">
-            <h1>BP</h1>
-            <div class="search-container">
-                <input type="text" placeholder="Buscar peças..." class="search-input">
-                <button class="search-btn">🔍</button>
-            </div>
+      <div class="header-content">
+        <h1>BP</h1>
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Buscar peças..."
+            class="search-input"
+          />
+          <button class="search-btn">🔍</button>
         </div>
+        <div class="account-container">
+          <button id="login">Adicionar peças</button>
+        </div>
+      </div>
     </header>
     <main>
-        <div class="wrapper"></div>
-        <div class="main-container">
-            <div class="item-container">
-                <iframe src="https://tinyglb.com/viewer/d6eea691bec74c7d94c0dae002a12195" style="border: none;"></iframe>
-                <h1>Rosca</h1>
-                <p>ISO 4014 M10x50</p>
-                <a href="rolamento.html">Ver mais</a>
-            </div>
-            <div class="item-container">
-                <iframe src="https://tinyglb.com/viewer/1e50501ea6864089989b30a1d614d89c" style="border: none;"></iframe>
-                <h1>Parafusos e Porcas</h1>
-                <p>ISO 4014</p>
-                <a href="parafuso.html">Ver mais</a>
-            </div>
-            <div class="item-container">
-                <iframe src="https://tinyglb.com/viewer/9a552931215f49b4991254e83aa703c6" style="border: none;"></iframe>
-                <h1>Engrenagem</h1>
-                <p>ISO 21771</p>
-                <a href="engrenagem.html">Ver mais</a>
-            </div>
-            <div class="item-container">
-                <iframe src="https://tinyglb.com/viewer/1e2246cece8041cfb8046ae78a3fa48c" style="border: none;"></iframe>
-                <h1>Eixo</h1>
-                <p>ISO 286</p>
-                <a href="eixo.html">Ver mais</a>
-            </div>
-            <div class="item-container">
-                <iframe src="https://tinyglb.com/viewer/13b99b5432e64a0c85644da5572710d2" style="border: none;"></iframe>
-                <h1>Valvula de Gaveta</h1>
-                <p>ISO 5996</p>
-                <a href="valvula.html">Ver mais</a>
-            </div>
-            <!--
+      <div class="wrapper"></div>
+      <div class="main-container">
+        <div class="item-container">
+          <iframe
+            src="https://tinyglb.com/viewer/d6eea691bec74c7d94c0dae002a12195"
+            style="border: none"
+          ></iframe>
+          <h1>Rosca</h1>
+          <p>ISO 4014 M10x50</p>
+          <a href="rolamento.html">Ver mais</a>
+        </div>
+        <div class="item-container">
+          <iframe
+            src="https://tinyglb.com/viewer/1e50501ea6864089989b30a1d614d89c"
+            style="border: none"
+          ></iframe>
+          <h1>Parafusos e Porcas</h1>
+          <p>ISO 4014</p>
+          <a href="parafuso.html">Ver mais</a>
+        </div>
+        <div class="item-container">
+          <iframe
+            src="https://tinyglb.com/viewer/9a552931215f49b4991254e83aa703c6"
+            style="border: none"
+          ></iframe>
+          <h1>Engrenagem</h1>
+          <p>ISO 21771</p>
+          <a href="engrenagem.html">Ver mais</a>
+        </div>
+        <div class="item-container">
+          <iframe
+            src="https://tinyglb.com/viewer/1e2246cece8041cfb8046ae78a3fa48c"
+            style="border: none"
+          ></iframe>
+          <h1>Eixo</h1>
+          <p>ISO 286</p>
+          <a href="eixo.html">Ver mais</a>
+        </div>
+        <div class="item-container">
+          <iframe
+            src="https://tinyglb.com/viewer/13b99b5432e64a0c85644da5572710d2"
+            style="border: none"
+          ></iframe>
+          <h1>Valvula de Gaveta</h1>
+          <p>ISO 5996</p>
+          <a href="valvula.html">Ver mais</a>
+        </div>
+        <!--
             <div class="item-container">
                 <iframe src="https://tinyglb.com/viewer/d6eea691bec74c7d94c0dae002a12195" style="border: none;"></iframe>
                 <h1>Rosca</h1>
@@ -69,7 +91,45 @@
                 <a href="#">Ver mais</a>
             </div>
             -->
-        </div>
+      </div>
+
+      <div class="login-window">
+        <h2>Fazer login</h2>
+        <form>
+          <div class="nome">
+            <label for="nome">Usuário</label>
+            <input type="text" name="nome" id="nomeInput" />
+          </div>
+          <div class="senha">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senhaInput" />
+          </div>
+        </form>
+        <button id="verificarLogin">Fazer Login</button>
+        <button id="fecharLogin">Fechar</button>
+      </div>
+      <div class="add-piece-display">
+        <form class="add-piece-form">
+            <label for="piece-name">Nome da peça:</label>
+            <input type="text" id="piece-name" name="piece-name" required>
+
+            <label for="piece-description">Descrição da peça:</label>
+            <textarea id="piece-description" name="piece-description" required></textarea>
+
+            <label for="piece-model">Modelo 3D (URL do GLB):</label>
+
+            <!-- Dropzone visual grande -->
+            <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
+                <span class="model-dropzone-text">Adicionar 3D</span>
+            </div>
+
+            <!-- input oculto para manter compatibilidade com forms/JS -->
+            <input type="url" id="piece-model" name="piece-model" class="hidden-model-input" aria-hidden="true" hidden>
+
+            <button id="submitPiece">Adicioanar peça</button>
+      </div>
     </main>
-</body>
+    <script src="script.js"></script>
+    <!-- <script src="adicionarpeças.js"></script> -->
+  </body>
 </html>
