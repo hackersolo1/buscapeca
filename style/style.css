@@ -1,296 +1,483 @@
+/* Ordem dos seletores segue a ordem do HTML: header, main-container, login-window, add-piece-display, etc. */
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 .orbitron {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
-.space-grotesk{
-  font-family: "Space Grotesk", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+.space-grotesk {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body,
 html {
-  scroll-behavior: smooth;
-  background-color: #f8fafc;
+    scroll-behavior: smooth;
+    background-color: #f8fafc;
 }
 
 header {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  z-index: 1;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1;
 }
 
 .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: 1400px;
-  padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px;
 }
 
 header h1 {
-  font-family: "Orbitron";
-  font-size: 46px;
-  background: linear-gradient(to right, #dc2626, #b91c1c, #dc2626);
-  background-size: 200%;
-  color: transparent;
-  background-clip: text;
-  animation: shine 3s linear infinite;
+    font-family: "Orbitron";
+    font-size: 46px;
+    background: linear-gradient(to right, #dc2626, #b91c1c, #dc2626);
+    background-size: 200%;
+    color: transparent;
+    background-clip: text;
+    animation: shine 3s linear infinite;
 }
 
 .search-container {
-  display: flex;
-  background: white;
-  border-radius: 25px;
-  padding: 5px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  border: 1px solid #e5e7eb;
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
 }
 
 .search-input {
-  border: none;
-  padding: 10px 15px;
-  border-radius: 25px;
-  outline: none;
-  width: 300px;
-  font-family: "Space Grotesk";
-  font-size: 14px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    outline: none;
+    width: 300px;
+    font-family: "Space Grotesk";
+    font-size: 14px;
 }
 
 .search-btn {
-  background: #dc2626;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    background: #dc2626;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .search-btn:hover {
-  background: #b91c1c;
-  transform: scale(1.05);
+    background: #b91c1c;
+    transform: scale(1.05);
 }
 
-header .account-container button, main .login-window button {
-  font-family: 'Space Grotesk';
-  font-size: 24px;
-  background: #dc2626;
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-  border: none;
-  cursor: pointer;
+header .account-container button,
+main .login-window button {
+    font-family: 'Space Grotesk';
+    font-size: 24px;
+    background: #dc2626;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
 }
 
-header .account-container button:hover, main .login-window button:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 0px 20px #991b1b;
+header .account-container button:hover,
+main .login-window button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px #991b1b;
 }
 
 main .wrapper {
-  height: 80px;
-  width: 100%;
+    height: 80px;
+    width: 100%;
 }
 
 main .main-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  padding: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 main .main-container .item-container {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  font-family: "Space Grotesk";
-  text-align: center;
-  padding: 20px;
-  background: white;
-  transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    font-family: "Space Grotesk";
+    text-align: center;
+    padding: 20px;
+    background: white;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 main .main-container .item-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 main .main-container .item-container iframe {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  pointer-events: none;
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    pointer-events: none;
 }
 
 main .main-container .item-container h1 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-  color: #1f2937;
-  font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #1f2937;
+    font-weight: 600;
 }
 
 main .main-container .item-container p {
-  color: #6b7280;
-  margin-bottom: 20px;
-  font-size: 0.9rem;
-  flex-grow: 1;
+    color: #6b7280;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    flex-grow: 1;
 }
 
-main .main-container .item-container a {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #dc2626, #b91c1c);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
-  font-family: "Space Grotesk";
-  font-size: 0.9rem;
+main .main-container .item-container button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: "Space Grotesk";
+    font-size: 0.9rem;
 }
 
-main .main-container .item-container a:hover {
-  background: linear-gradient(135deg, #b91c1c, #991b1b);
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+main .main-container .item-container button:hover {
+    background: linear-gradient(135deg, #b91c1c, #991b1b);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
 }
 
 main .login-window {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  opacity: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 main .login-window h2 {
-  font-family: 'Space Grotesk';
-  font-size: 36px;
-  font-weight: 700;
+    font-family: 'Space Grotesk';
+    font-size: 36px;
+    font-weight: 700;
 }
 
 main .login-window form label {
-  font-size: 24px;
-  font-family: 'Space Grotesk';
-  display: block;
+    font-size: 24px;
+    font-family: 'Space Grotesk';
+    display: block;
 }
 
 main .login-window form input {
-  padding: 10px;
-  font-size: 24px;
-  font-family: 'Space Grotesk';
-  outline: none;
-  background: transparent;
-  border: 3px solid red;
-  border-radius: 20px;
+    padding: 10px;
+    font-size: 24px;
+    font-family: 'Space Grotesk';
+    outline: none;
+    background: transparent;
+    border: 3px solid red;
+    border-radius: 20px;
 }
 
 main .login-window button {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 @keyframes aparecer {
-  from {
-    z-index: -2;
-    opacity: 0;
-  }
+    from {
+        z-index: -2;
+        opacity: 0;
+    }
 
-  to {
-    z-index: 3;
-    opacity: 1;
-  }
+    to {
+        z-index: 3;
+        opacity: 1;
+    }
 }
 
 @keyframes desaparecer {
-  from {
-    z-index: 3;
-    opacity: 1;
-  }
+    from {
+        z-index: 3;
+        opacity: 1;
+    }
 
-  to {
-    z-index: -2;
-    opacity: 0;
-  }
+    to {
+        z-index: -2;
+        opacity: 0;
+    }
 }
 
 @keyframes shine {
-  to {
-    background-position: 200%;
-  }
+    to {
+        background-position: 200%;
+    }
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .search-input {
-    width: 250px;
-  }
-  
-  main .main-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 15px;
-    gap: 20px;
-  }
-  
-  header h1 {
-    font-size: 36px;
-  }
-  
-  main .wrapper {
-    height: 120px;
-  }
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 16px;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 520px;
+        justify-content: space-between;
+    }
+
+    .search-input {
+        width: calc(100% - 56px);
+        font-size: 15px;
+    }
+
+    main .main-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 15px;
+        gap: 20px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    main .wrapper {
+        height: 120px;
+    }
+
+    .account-container {
+        display: flex;
+        gap: 8px;
+    }
+
+    /* pieceWindow grid vira coluna */
+    .pieceWindow .apresentation {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px;
+        min-height: unset;
+    }
+    main .pieceWindow .apresentation .iframeCont iframe {
+        height: 320px;
+    }
+    main .pieceWindow .apresentation .informationContainer {
+        padding: 16px;
+    }
+    main .pieceWindow .apresentation .informationContainer h2 {
+        font-size: 26px;
+    }
+    main .pieceWindow .apresentation .informationContainer p {
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 480px) {
-  main .main-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .search-input {
-    width: 200px;
-  }
+    header {
+        padding: 12px 8px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    header h1 {
+        font-size: 28px;
+        text-align: left;
+        margin-left: 8px;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: none;
+        padding: 6px;
+    }
+
+    .search-input {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .search-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    /* Grid vira coluna única */
+    main .main-container {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 16px;
+    }
+
+    main .main-container .item-container {
+        padding: 14px;
+    }
+
+    main .main-container .item-container iframe {
+        height: 180px;
+    }
+
+    /* Login ocupa toda a tela no mobile e fica scrollable */
+    main .login-window {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    main .login-window h2 {
+        font-size: 28px;
+    }
+
+    main .login-window form input {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    /* Ajusta a área de adicionar peça para mobile */
+    main .add-piece-display {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding: 20px;
+        overflow-y: auto;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    main .add-piece-form {
+        width: 100%;
+        max-width: 480px;
+        margin: 80px auto 20px;
+        padding: 16px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    main .add-piece-form input,
+    main .add-piece-form textarea {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .model-dropzone {
+        width: 100%;
+        height: 260px;
+        border-radius: 10px;
+    }
+
+    .pieceWindow .apresentation {
+        padding: 8px;
+        gap: 12px;
+    }
+    main .pieceWindow .apresentation .iframeCont iframe {
+        height: 180px;
+        border-radius: 12px;
+    }
+    main .pieceWindow .apresentation .iframeCont p {
+        font-size: 15px;
+    }
+    main .pieceWindow .apresentation .informationContainer {
+        padding: 8px;
+    }
+    main .pieceWindow .apresentation .informationContainer h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    main .pieceWindow .apresentation .informationContainer p {
+        font-size: 13px;
+    }
+    main .pieceWindow .apresentation .informationContainer #closePieceWindow {
+        font-size: 15px;
+        padding: 8px 14px;
+        margin-top: 18px;
+    }
+    .pieceWindow {
+        padding: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .search-input {
+        font-size: 13px;
+    }
+
+    main .main-container .item-container iframe {
+        height: 150px;
+    }
+
+    .model-dropzone {
+        height: 220px;
+    }
+
+    main .pieceWindow .apresentation .iframeCont iframe {
+        height: 120px;
+    }
+    main .pieceWindow .apresentation .informationContainer h2 {
+        font-size: 16px;
+    }
+    main .pieceWindow .apresentation .informationContainer p {
+        font-size: 11px;
+    }
 }
 
 main .add-piece-display {
@@ -300,23 +487,78 @@ main .add-piece-display {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     height: 100vh;
     width: 100vw;
     background: rgba(0, 0, 0, 0.5);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     z-index: -3;
-    opacity: 0;
 }
 
 main .add-piece-form {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
+
+main .add-piece-form input,
+main .add-piece-form textarea {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 14px;
+}
+
+main .add-piece-form label {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fdfdfd;
+}
+
+main .add-piece-form button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    background: #dc2626;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+main .add-piece-form button:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
+
+/* Novo: aplicar mesmo estilo ao botão de fechar da tela de adicionar peça */
+#closeAddPiece {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    background: #dc2626;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 12px;
+}
+
+#closeAddPiece:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
+
+
 
 main .add-piece-form input,
 main .add-piece-form textarea {
@@ -346,17 +588,12 @@ main .add-piece-form button:hover {
     transform: scale(1.05);
 }
 
-main .add-piece-form label {
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 24px;
-    color: white;
-}
-
 /* Novo: dropzone visual para o 3D */
 .model-dropzone {
     width: 320px;
     height: 320px;
-    background: #e5e7eb; /* cinza claro */
+    background: #e5e7eb;
+    /* cinza claro */
     border: 2px dashed #c7cdd6;
     border-radius: 12px;
     display: flex;
@@ -365,7 +602,8 @@ main .add-piece-form label {
     cursor: pointer;
     transition: background-color 0.2s, transform 0.12s, border-color 0.12s;
     outline: none;
-    position: relative; /* necessário para o botão "Remover" */
+    position: relative;
+    /* necessário para o botão "Remover" */
     overflow: hidden;
 }
 
@@ -376,7 +614,7 @@ main .add-piece-form label {
 }
 
 .model-dropzone:focus {
-    box-shadow: 0 0 0 4px rgba(99,102,241,0.12);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
     border-color: #6366f1;
 }
 
@@ -399,7 +637,7 @@ main .add-piece-form label {
     position: absolute;
     top: 8px;
     right: 8px;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     border: none;
     padding: 6px 8px;
@@ -410,7 +648,7 @@ main .add-piece-form label {
 }
 
 .model-dropzone .remove-btn:hover {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .model-dropzone-text {
@@ -426,19 +664,309 @@ main .add-piece-form label {
     display: none;
 }
 
-.model-dropzone {
-    width: 320px;
-    height: 320px;
-    background: #e5e7eb; /* cinza claro */
-    border: 2px dashed #c7cdd6;
-    border-radius: 12px;
+.pieceWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    opacity: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.12s, border-color 0.12s;
-    outline: none;
-    position: relative; /* necessário para o botão "Remover" */
-    overflow: hidden;
+    flex-direction: column;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
 }
 
+.pieceWindow h2 {
+    font-family: 'Space Grotesk';
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+.pieceWindow .apresentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    height: auto;
+    min-height: 80vh;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+main .pieceWindow .apresentation .iframeCont p {
+    font-size: 20px;
+    text-align: center;
+    font-family: "Space Grotesk";
+    color: rgba(255, 255, 255, 1);
+}
+
+main .pieceWindow .apresentation .iframeCont iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 20px;
+}
+
+main .pieceWindow .apresentation .informationContainer {
+    height: auto;
+    align-content: center;
+    font-family: "Space Grotesk";
+    text-align: left;
+    padding: 30px;
+}
+
+main .pieceWindow .apresentation .informationContainer h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+main .pieceWindow .apresentation .informationContainer p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+main .pieceWindow .apresentation .informationContainer #closePieceWindow {
+    margin-top: 30px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    background: #dc2626;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 16px;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 520px;
+        justify-content: space-between;
+    }
+
+    .search-input {
+        width: calc(100% - 56px);
+        font-size: 15px;
+    }
+
+    main .main-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 15px;
+        gap: 20px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    main .wrapper {
+        height: 120px;
+    }
+
+    .account-container {
+        display: flex;
+        gap: 8px;
+    }
+
+    /* pieceWindow grid vira coluna */
+    .pieceWindow .apresentation {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px;
+        min-height: unset;
+    }
+    main .pieceWindow .apresentation .iframeCont iframe {
+        height: 320px;
+    }
+    main .pieceWindow .apresentation .informationContainer {
+        padding: 16px;
+    }
+    main .pieceWindow .apresentation .informationContainer h2 {
+        font-size: 26px;
+    }
+    main .pieceWindow .apresentation .informationContainer p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 12px 8px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    header h1 {
+        font-size: 28px;
+        text-align: left;
+        margin-left: 8px;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: none;
+        padding: 6px;
+    }
+
+    .search-input {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .search-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    /* Grid vira coluna única */
+    main .main-container {
+        grid-template-columns: 1fr;
+        padding: 12px;
+        gap: 16px;
+    }
+
+    main .main-container .item-container {
+        padding: 14px;
+    }
+
+    main .main-container .item-container iframe {
+        height: 180px;
+    }
+
+    /* Login ocupa toda a tela no mobile e fica scrollable */
+    main .login-window {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    main .login-window h2 {
+        font-size: 28px;
+    }
+
+    main .login-window form input {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    /* Ajusta a área de adicionar peça para mobile */
+    main .add-piece-display {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding: 20px;
+        overflow-y: auto;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    main .add-piece-form {
+        width: 100%;
+        max-width: 480px;
+        margin: 80px auto 20px;
+        padding: 16px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    main .add-piece-form input,
+    main .add-piece-form textarea {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .model-dropzone {
+        width: 100%;
+        height: 260px;
+        border-radius: 10px;
+    }
+
+    .pieceWindow .apresentation {
+        padding: 8px;
+        gap: 12px;
+    }
+    main .pieceWindow .apresentation .iframeCont iframe {
+        height: 180px;
+        border-radius: 12px;
+    }
+    main .pieceWindow .apresentation .iframeCont p {
+        font-size: 15px;
+    }
+    main .pieceWindow .apresentation .informationContainer {
+        padding: 8px;
+    }
+    main .pieceWindow .apresentation .informationContainer h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    main .pieceWindow .apresentation .informationContainer p {
+        font-size: 13px;
+    }
+    main .pieceWindow .apresentation .informationContainer #closePieceWindow {
+        font-size: 15px;
+        padding: 8px 14px;
+        margin-top: 18px;
+    }
+    .pieceWindow {
+        padding: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .search-input {
+        font-size: 13px;
+    }
+
+    main .main-container .item-container iframe {
+        height: 150px;
+    }
+
+    .model-dropzone {
+        height: 220px;
+    }
+
+    main .pieceWindow .apresentation .iframeCont iframe {
+        height: 120px;
+    }
+    main .pieceWindow .apresentation .informationContainer h2 {
+        font-size: 16px;
+    }
+}
