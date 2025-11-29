@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BuscaPeças</title>
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -98,26 +98,6 @@
 
             <label for="piece-model">Modelo 3D (URL do GLB):</label>
 
-            <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
-                <span class="model-dropzone-text">Adicionar 3D</span>
-            </div>
-
-            <input type="url" id="piece-model" name="piece-model" class="hidden-model-input" aria-hidden="true" hidden>
-
-            <button id="submitPiece">Adicioanar peça</button>
-            <button id="fecharLogin">Fechar</button>
-      </div>
-
-      <div class="add-piece-display">
-        <form class="add-piece-form">
-            <label for="piece-name">Nome da peça:</label>
-            <input type="text" id="piece-name" name="piece-name" required>
-
-            <label for="piece-description">Descrição da peça:</label>
-            <textarea id="piece-description" name="piece-description" required></textarea>
-
-            <label for="piece-model">Modelo 3D (URL do GLB):</label>
-
             <!-- Dropzone visual grande -->
             <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
                 <span class="model-dropzone-text">Adicionar 3D</span>
@@ -130,7 +110,6 @@
         </form>
         <button id="closeAddPiece">Fechar</button>
       </div>
-      
       <div class="pieceWindow">
         <div class="apresentation">
             <div class="iframeCont">
@@ -146,6 +125,7 @@
         </div>
       </div>
     </main>
-    <script src="script/script.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="adicionarpeças.js"></script> -->
   </body>
 </html>
