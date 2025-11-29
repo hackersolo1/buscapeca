@@ -266,6 +266,8 @@ main .login-window button {
         flex-direction: column;
         gap: 15px;
         padding: 10px 16px;
+        justify-content: center;
+        align-items: center;
     }
 
     .search-container {
@@ -307,6 +309,7 @@ main .login-window button {
     }
     main .pieceWindow .apresentation .iframeCont iframe {
         height: 320px;
+        width: 320px;
     }
     main .pieceWindow .apresentation .informationContainer {
         padding: 16px;
@@ -328,6 +331,8 @@ main .login-window button {
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
+        justify-content: center;
+        align-items: center;
     }
 
     header h1 {
@@ -365,7 +370,7 @@ main .login-window button {
     }
 
     main .main-container .item-container iframe {
-        height: 180px;
+        height: 320px;
     }
 
     /* Login ocupa toda a tela no mobile e fica scrollable */
