@@ -71,26 +71,6 @@
           <p>ISO 5996</p>
           <a href="valvula.html">Ver mais</a>
         </div>
-        <!--
-            <div class="item-container">
-                <iframe src="https://tinyglb.com/viewer/d6eea691bec74c7d94c0dae002a12195" style="border: none;"></iframe>
-                <h1>Rosca</h1>
-                <p>ISO 4014 M10x50</p>
-                <a href="#">Ver mais</a>
-            </div>
-            <div class="item-container">
-                <iframe src="https://tinyglb.com/viewer/d6eea691bec74c7d94c0dae002a12195" style="border: none;"></iframe>
-                <h1>Rosca</h1>
-                <p>ISO 4014 M10x50</p>
-                <a href="#">Ver mais</a>
-            </div>
-            <div class="item-container">
-                <iframe src="https://tinyglb.com/viewer/d6eea691bec74c7d94c0dae002a12195" style="border: none;"></iframe>
-                <h1>Rosca</h1>
-                <p>ISO 4014 M10x50</p>
-                <a href="#">Ver mais</a>
-            </div>
-            -->
       </div>
 
       <div class="login-window">
@@ -118,6 +98,26 @@
 
             <label for="piece-model">Modelo 3D (URL do GLB):</label>
 
+            <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
+                <span class="model-dropzone-text">Adicionar 3D</span>
+            </div>
+
+            <input type="url" id="piece-model" name="piece-model" class="hidden-model-input" aria-hidden="true" hidden>
+
+            <button id="submitPiece">Adicioanar peça</button>
+            <button id="fecharLogin">Fechar</button>
+      </div>
+
+      <div class="add-piece-display">
+        <form class="add-piece-form">
+            <label for="piece-name">Nome da peça:</label>
+            <input type="text" id="piece-name" name="piece-name" required>
+
+            <label for="piece-description">Descrição da peça:</label>
+            <textarea id="piece-description" name="piece-description" required></textarea>
+
+            <label for="piece-model">Modelo 3D (URL do GLB):</label>
+
             <!-- Dropzone visual grande -->
             <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
                 <span class="model-dropzone-text">Adicionar 3D</span>
@@ -127,9 +127,25 @@
             <input type="url" id="piece-model" name="piece-model" class="hidden-model-input" aria-hidden="true" hidden>
 
             <button id="submitPiece">Adicioanar peça</button>
+        </form>
+        <button id="closeAddPiece">Fechar</button>
+      </div>
+      
+      <div class="pieceWindow">
+        <div class="apresentation">
+            <div class="iframeCont">
+                <iframe src="" style="border: none;" id="PieceIframe"></iframe>
+                <p>Esse é um elemento 3D. Mexa para ver-lo melhor</p>
+            </div>
+            <div class="informationContainer">
+                <h2 id="nameOfPiece"></h2>
+                <p id="PieceIsoCode"></p>
+                <p id="pieceInformationDesc"></p>
+                <button id="closePieceWindow">Fechar</button>
+            </div>
+        </div>
       </div>
     </main>
     <script src="script/script.js"></script>
-    <!-- <script src="adicionarpeças.js"></script> -->
   </body>
 </html>
