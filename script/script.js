@@ -55,7 +55,7 @@ closeAddPieceBtn.addEventListener('click', () => {
 });
 
 RoscBtn.addEventListener('click', () => {
-    pieceModel.src = 'models/rosca.glb';
+    pieceModel.src = 'modelos/rosca.glb';
     nameOfPiece.textContent = 'Rosca';
     PieceIsoCode.textContent = 'ISO 68-1';
     pieceInformationDesc.textContent = 'A rosca é um elemento de fixação utilizado para unir componentes mecânicos, permitindo desmontagem e montagem repetidas.';
@@ -63,7 +63,7 @@ RoscBtn.addEventListener('click', () => {
 });
 
 ParafBtn.addEventListener('click', () => {
-    pieceModel.src = 'models/parafuso.glb';
+    pieceModel.src = 'modelos/parafuso.glb';
     nameOfPiece.textContent = 'Parafuso';
     PieceIsoCode.textContent = 'ISO 4014';
     pieceInformationDesc.textContent = 'O parafuso é um elemento de fixação que utiliza uma rosca externa para unir peças, sendo amplamente utilizado em diversas aplicações mecânicas.';
@@ -71,7 +71,7 @@ ParafBtn.addEventListener('click', () => {
 });
 
 EngreBtn.addEventListener('click', () => {
-    pieceModel.src = 'models/engrenagem.glb';
+    pieceModel.src = 'modelos/engrenagem.glb';
     nameOfPiece.textContent = 'Engrenagem';
     PieceIsoCode.textContent = 'ISO 1328';
     pieceInformationDesc.textContent = 'A engrenagem é um componente mecânico que transmite movimento e força entre eixos através do contato de seus dentes.';
@@ -79,7 +79,7 @@ EngreBtn.addEventListener('click', () => {
 });
 
 EixoBtn.addEventListener('click', () => {
-    pieceModel.src = 'models/eixo.glb';
+    pieceModel.src = 'modelos/eixo.glb';
     nameOfPiece.textContent = 'Eixo';
     PieceIsoCode.textContent = 'ISO 286-1';
     pieceInformationDesc.textContent = 'O eixo é um componente mecânico que serve como suporte para outros elementos, transmitindo torque e movimento rotacional.';
@@ -87,7 +87,7 @@ EixoBtn.addEventListener('click', () => {
 });
 
 valvulaBtn.addEventListener('click', () => {
-    pieceModel.src = 'models/valvula.glb';
+    pieceModel.src = 'modelos/valvula.glb';
     nameOfPiece.textContent = 'Válvula';
     PieceIsoCode.textContent = 'ISO 5208';
     pieceInformationDesc.textContent = 'A válvula é um dispositivo utilizado para controlar o fluxo de fluidos em sistemas hidráulicos e pneumáticos.';
