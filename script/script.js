@@ -18,3 +18,7 @@ const pieceIframe = document.querySelector('#PieceIframe');
 const nameOfPiece = document.querySelector('#nameOfPiece');
 const PieceIsoCode = document.querySelector('#PieceIsoCode');
 const pieceInformationDesc = document.querySelector('#pieceInformationDesc');
+
+loginBtn.addEventListener('click', () => {
+    loginWindow.style.animation = 'show 0.5s ease-in-out forwards';
+});

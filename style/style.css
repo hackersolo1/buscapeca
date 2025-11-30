@@ -255,7 +255,7 @@ main .login-window button {
     margin-top: 10px;
 }
 
-@keyframes aparecer {
+@keyframes show {
     from {
         opacity: 0;
         pointer-events: none;
@@ -266,7 +266,7 @@ main .login-window button {
     }
 }
 
-@keyframes desaparecer {
+@keyframes unshow {
     from {
         opacity: 1;
         pointer-events: all;
