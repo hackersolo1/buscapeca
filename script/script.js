@@ -63,7 +63,7 @@ RoscBtn.addEventListener('click', () => {
 });
 
 ParafBtn.addEventListener('click', () => {
-    pieceModel.src = 'modelos/parafuso.glb';
+    pieceModel.src = 'modelos/parafusos.glb';
     nameOfPiece.textContent = 'Parafuso';
     PieceIsoCode.textContent = 'ISO 4014';
     pieceInformationDesc.textContent = 'O parafuso é um elemento de fixação que utiliza uma rosca externa para unir peças, sendo amplamente utilizado em diversas aplicações mecânicas.';
@@ -96,4 +96,5 @@ valvulaBtn.addEventListener('click', () => {
 
 pieceCloseBtn.addEventListener('click', () => {
     pieceWindow.style.animation = 'unshow 0.5s ease-in-out forwards';
+    pieceModel.src = '';
 });
