@@ -357,7 +357,7 @@ main .add-piece-form button:hover {
     transform: scale(1.05);
 }
 
-#closeAddPiece {
+#closeAddPiece, .closePieceWindow {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px;
     background: #dc2626;
@@ -502,7 +502,7 @@ main .pieceWindow .apresentation .iframeCont p {
     color: rgba(255, 255, 255, 1);
 }
 
-main .pieceWindow .apresentation .iframeCont iframe {
+main .pieceWindow .apresentation .iframeCont .model3D {
     width: 100%;
     max-width: 600px;
     height: 400px;
@@ -558,7 +558,7 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
         padding: 20px;
     }
     
-    main .pieceWindow .apresentation .iframeCont iframe {
+    main .pieceWindow .apresentation .iframeCont .model3D {
         height: 350px;
     }
 }
@@ -605,7 +605,7 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
         padding: 20px;
     }
     
-    main .pieceWindow .apresentation .iframeCont iframe {
+    main .pieceWindow .apresentation .iframeCont .model3D {
         height: 300px;
     }
     
@@ -687,7 +687,7 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
         padding: 15px;
     }
     
-    main .pieceWindow .apresentation .iframeCont iframe {
+    main .pieceWindow .apresentation .iframeCont .model3D {
         height: 220px;
         border-radius: 8px;
     }
@@ -749,7 +749,7 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
         height: 120px;
     }
 
-    main .pieceWindow .apresentation .iframeCont iframe {
+    main .pieceWindow .apresentation .iframeCont .model3D {
         height: 180px;
     }
     

@@ -65,15 +65,15 @@
         <form>
           <div class="nome">
             <label for="nome">Usuário</label>
-            <input type="text" name="nome" id="nomeInput" />
+            <input type="text" name="nome" id="nameInput" />
           </div>
           <div class="senha">
             <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senhaInput" />
+            <input type="password" name="senha" id="passInput" />
           </div>
         </form>
-        <button id="verificarLogin">Fazer Login</button>
-        <button id="fecharLogin">Fechar</button>
+        <button id="verifyLogin">Fazer Login</button>
+        <button id="closeLogin">Fechar</button>
       </div>
       <div class="add-piece-display">
         <form class="add-piece-form">
@@ -100,7 +100,7 @@
       <div class="pieceWindow">
         <div class="apresentation">
             <div class="iframeCont">
-                <iframe src="" style="border: none;" id="PieceIframe"></iframe>
+                <model-viewer id="pieceModelViewer" src="" auto-rotate loading="eager" camera-controls enviroment-image="none" shadow-intesity="0" interaction-prompt class="model3D"></model-viewer>
                 <p>Esse é um elemento 3D. Mexa para ver-lo melhor</p>
             </div>
             <div class="informationContainer">
