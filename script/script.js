@@ -22,3 +22,7 @@ const pieceInformationDesc = document.querySelector('#pieceInformationDesc');
 loginBtn.addEventListener('click', () => {
     loginWindow.style.animation = 'show 0.5s ease-in-out forwards';
 });
+
+closeLoginBtn.addEventListener('click', () => {
+    loginWindow.style.animation = 'unshow 0.5s ease-in-out forwards';
+});
