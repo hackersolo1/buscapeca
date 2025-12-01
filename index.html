@@ -56,6 +56,7 @@
       </div>
     </div>
 
+    <!-- Login display -->
     <div class="login-window">
       <h2>Fazer login</h2>
       <form>
@@ -71,6 +72,8 @@
       <button id="verifyLogin">Fazer Login</button>
       <button id="closeLogin">Fechar</button>
     </div>
+
+    <!-- Add piece display -->
     <div class="add-piece-display">
       <form class="add-piece-form">
         <label for="piece-name">Nome da peça:</label>
@@ -81,18 +84,17 @@
 
         <label for="piece-model">Modelo 3D (URL do GLB):</label>
 
-        <!-- Dropzone visual grande -->
         <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
           <span class="model-dropzone-text">Adicionar 3D</span>
         </div>
-
-        <!-- input oculto para manter compatibilidade com forms/JS -->
         <input type="url" id="piece-model" name="piece-model" class="hidden-model-input" aria-hidden="true" hidden>
 
         <button id="submitPiece">Adicioanar peça</button>
       </form>
       <button id="closeAddPiece">Fechar</button>
     </div>
+
+    <!-- Piece display -->
     <div class="pieceWindow">
       <div class="apresentation">
         <div class="iframeCont">
@@ -110,7 +112,6 @@
     </div>
   </main>
   <script src="script/script.js"></script>
-  <!-- <script src="adicionarpeças.js"></script> -->
 </body>
 
 </html>

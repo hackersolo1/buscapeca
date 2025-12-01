@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => {
 // Login Elements
 const loginBtn = document.querySelector('#login');
 const loginWindow = document.querySelector('.login-window');
@@ -97,4 +98,6 @@ valvulaBtn.addEventListener('click', () => {
 pieceCloseBtn.addEventListener('click', () => {
     pieceWindow.style.animation = 'unshow 0.5s ease-in-out forwards';
     pieceModel.src = '';
+    alert('Fechando a janela de informações da peça.');
+});
 });
