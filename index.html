@@ -1,118 +1,116 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BuscaPeças</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
-  </head>
-  <body>
-    <header>
-      <div class="header-content">
-        <h1>BP</h1>
-        <div class="search-container">
-          <input
-            type="text"
-            placeholder="Buscar peças..."
-            class="search-input"
-          />
-          <button class="search-btn">🔍</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuscaPeças</title>
+  <link rel="stylesheet" href="style/style.css" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1>BP</h1>
+      <div class="search-container">
+        <input type="text" placeholder="Buscar peças..." class="search-input" />
+        <button class="search-btn">🔍</button>
+      </div>
+      <div class="account-container">
+        <button id="login">Adicionar peças</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="wrapper"></div>
+    <div class="main-container">
+      <div class="item-container">
+        <model-viewer src="modelos/rosca.glb" auto-rotate loading="eager" camera-controls enviroment-image="none"
+          shadow-intesity="0" interacton-prompt class="model"></model-viewer>
+        <h1>Rosca</h1>
+        <p>ISO 4014 M10x50</p>
+        <button id="Rosc">Ver mais</button>
+      </div>
+      <div class="item-container">
+        <model-viewer src="modelos/parafusos.glb" auto-rotate loading="eager" camera-controls enviroment-image="none"
+          shadow-intesity="0" interacton-prompt class="model"></model-viewer>
+        <h1>Parafusos e Porcas</h1>
+        <p>ISO 4014</p>
+        <button id="paraf">Ver mais</button>
+      </div>
+      <div class="item-container">
+        <model-viewer src="modelos/engrenagem.glb" auto-rotate loading="eager" camera-controls enviroment-image="none"
+          shadow-intesity="0" interacton-prompt class="model"></model-viewer>
+        <h1>Engrenagem</h1>
+        <p>ISO 21771</p>
+        <button id="engre">Ver mais</button>
+      </div>
+      <div class="item-container">
+        <model-viewer src="modelos/valvula.glb" auto-rotate loading="eager" camera-controls enviroment-image="none"
+          shadow-intesity="0" interacton-prompt class="model"></model-viewer>
+        <h1>Valvula de Gaveta</h1>
+        <p>ISO 5996</p>
+        <button id="valvula">Ver mais</button>
+      </div>
+    </div>
+
+    <div class="login-window">
+      <h2>Fazer login</h2>
+      <form>
+        <div class="nome">
+          <label for="nome">Usuário</label>
+          <input type="text" name="nome" id="nameInput" />
         </div>
-        <div class="account-container">
-          <button id="login">Adicionar peças</button>
+        <div class="senha">
+          <label for="senha">Senha</label>
+          <input type="password" name="senha" id="passInput" />
+        </div>
+      </form>
+      <button id="verifyLogin">Fazer Login</button>
+      <button id="closeLogin">Fechar</button>
+    </div>
+    <div class="add-piece-display">
+      <form class="add-piece-form">
+        <label for="piece-name">Nome da peça:</label>
+        <input type="text" id="piece-name" name="piece-name" required>
+
+        <label for="piece-description">Descrição da peça:</label>
+        <textarea id="piece-description" name="piece-description" required></textarea>
+
+        <label for="piece-model">Modelo 3D (URL do GLB):</label>
+
+        <!-- Dropzone visual grande -->
+        <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
+          <span class="model-dropzone-text">Adicionar 3D</span>
+        </div>
+
+        <!-- input oculto para manter compatibilidade com forms/JS -->
+        <input type="url" id="piece-model" name="piece-model" class="hidden-model-input" aria-hidden="true" hidden>
+
+        <button id="submitPiece">Adicioanar peça</button>
+      </form>
+      <button id="closeAddPiece">Fechar</button>
+    </div>
+    <div class="pieceWindow">
+      <div class="apresentation">
+        <div class="iframeCont">
+          <model-viewer id="pieceModelViewer" src="" auto-rotate loading="eager" camera-controls enviroment-image="none"
+            shadow-intesity="0" interaction-prompt class="model3D"></model-viewer>
+          <p>Esse é um elemento 3D. Mexa para ver-lo melhor</p>
+        </div>
+        <div class="informationContainer">
+          <h2 id="nameOfPiece"></h2>
+          <p id="PieceIsoCode"></p>
+          <p id="pieceInformationDesc"></p>
+          <button id="closePieceWindow">Fechar</button>
         </div>
       </div>
-    </header>
-    <main>
-      <div class="wrapper"></div>
-      <div class="main-container">
-        <div class="item-container">
-          <model-viewer src="modelos/rosca.glb" auto-rotate loading="eager" camera-controls enviroment-image="none" shadow-intesity="0" interacton-prompt class="model"></model-viewer>
-          <h1>Rosca</h1>
-          <p>ISO 4014 M10x50</p>
-          <button id="Rosc">Ver mais</button>
-        </div>
-        <div class="item-container">
-          <model-viewer src="modelos/parafusos.glb" auto-rotate loading="eager" camera-controls enviroment-image="none" shadow-intesity="0" interacton-prompt class="model"></model-viewer>
-          <h1>Parafusos e Porcas</h1>
-          <p>ISO 4014</p>
-          <button id="paraf">Ver mais</button>
-        </div>
-        <div class="item-container">
-          <model-viewer src="modelos/engrenagem.glb" auto-rotate loading="eager" camera-controls enviroment-image="none" shadow-intesity="0" interacton-prompt class="model"></model-viewer>
-          <h1>Engrenagem</h1>
-          <p>ISO 21771</p>
-          <button id="engre">Ver mais</button>
-        </div>
-        <div class="item-container">
-          <model-viewer src="modelos/eixo.glb" auto-rotate loading="eager" camera-controls enviroment-image="none" shadow-intesity="0" interacton-prompt class="model"></model-viewer>
-          <h1>Eixo</h1>
-          <p>ISO 286</p>
-          <button id="eixo">Ver mais</button>
-        </div>
-        <div class="item-container">
-          <model-viewer src="modelos/valvula.glb" auto-rotate loading="eager" camera-controls enviroment-image="none" shadow-intesity="0" interacton-prompt class="model"></model-viewer>
-          <h1>Valvula de Gaveta</h1>
-          <p>ISO 5996</p>
-          <button id="valvula">Ver mais</button>
-        </div>
-      </div>
+    </div>
+  </main>
+  <script src="script/script.js"></script>
+  <!-- <script src="adicionarpeças.js"></script> -->
+</body>
 
-      <div class="login-window">
-        <h2>Fazer login</h2>
-        <form>
-          <div class="nome">
-            <label for="nome">Usuário</label>
-            <input type="text" name="nome" id="nameInput" />
-          </div>
-          <div class="senha">
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" id="passInput" />
-          </div>
-        </form>
-        <button id="verifyLogin">Fazer Login</button>
-        <button id="closeLogin">Fechar</button>
-      </div>
-      <div class="add-piece-display">
-        <form class="add-piece-form">
-            <label for="piece-name">Nome da peça:</label>
-            <input type="text" id="piece-name" name="piece-name" required>
-
-            <label for="piece-description">Descrição da peça:</label>
-            <textarea id="piece-description" name="piece-description" required></textarea>
-
-            <label for="piece-model">Modelo 3D (URL do GLB):</label>
-
-            <!-- Dropzone visual grande -->
-            <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
-                <span class="model-dropzone-text">Adicionar 3D</span>
-            </div>
-
-            <!-- input oculto para manter compatibilidade com forms/JS -->
-            <input type="url" id="piece-model" name="piece-model" class="hidden-model-input" aria-hidden="true" hidden>
-
-            <button id="submitPiece">Adicioanar peça</button>
-        </form>
-        <button id="closeAddPiece">Fechar</button>
-      </div>
-      <div class="pieceWindow">
-        <div class="apresentation">
-            <div class="iframeCont">
-                <model-viewer id="pieceModelViewer" src="" auto-rotate loading="eager" camera-controls enviroment-image="none" shadow-intesity="0" interaction-prompt class="model3D"></model-viewer>
-                <p>Esse é um elemento 3D. Mexa para ver-lo melhor</p>
-            </div>
-            <div class="informationContainer">
-                <h2 id="nameOfPiece"></h2>
-                <p id="PieceIsoCode"></p>
-                <p id="pieceInformationDesc"></p>
-                <button id="closePieceWindow">Fechar</button>
-            </div>
-        </div>
-      </div>
-    </main>
-    <script src="script/script.js"></script>
-    <!-- <script src="adicionarpeças.js"></script> -->
-  </body>
 </html>
