@@ -13,6 +13,9 @@ const verifyLoginBtn = document.querySelector('#verifyLogin');
 const addPieceDisplay = document.querySelector('.add-piece-display');
 const modelDropzone = document.querySelector('.model-dropzone');
 const closeAddPieceBtn = document.querySelector('#closeAddPiece');
+const submPiece = document.querySelector('#submitPiece');
+const namePieceInput = document.querySelector('#piece-name');
+const codePiece = document.querySelector('#piece-iso-code');
 
 // Piece Buttons
 const RoscBtn = document.querySelector('#Rosc');
@@ -95,4 +98,24 @@ pieceCloseBtn.addEventListener('click', () => {
     pieceWindow.style.animation = 'unshow 0.5s ease-in-out forwards';
     pieceModel.src = '';
 });
+});
+
+// Funções para adicionar peças 
+
+submPiece.addEventListener('click' () => {
+    if(namePieceInput == '' && codePiece == '') {
+        alert('As áreas precisam ser preenchidas!');
+        return;
+    };
+
+    const namePc = namePieceInput.value;
+    const descPc = pieceDescInput.value;
+
+    const newItem = document.createElement('div');
+    newItem.classList.add('item-container');
+    newItem.innerHTML = `
+        <h1>${namePc}</h1>
+        <p>${codePiece}</p>
+        <button id="${namePc}">Ver mais</button>
+    `;
 });
