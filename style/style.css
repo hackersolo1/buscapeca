@@ -116,7 +116,7 @@ main .login-window button:hover {
 }
 
 main .wrapper {
-    height: 220px;
+    height: 90px;
     width: 100%;
 }
 
@@ -663,6 +663,10 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
     .search-btn {
         width: 44px;
         height: 44px;
+    }
+
+    main .wrapper {
+        height: 320px;
     }
 
     main .main-container {
