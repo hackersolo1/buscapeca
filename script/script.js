@@ -18,7 +18,6 @@ const closeAddPieceBtn = document.querySelector('#closeAddPiece');
 const RoscBtn = document.querySelector('#Rosc');
 const ParafBtn = document.querySelector('#paraf');
 const EngreBtn = document.querySelector('#engre');
-const EixoBtn = document.querySelector('#eixo');
 const valvulaBtn = document.querySelector('#valvula');
 
 // Piece Information Window Elements
@@ -76,14 +75,6 @@ EngreBtn.addEventListener('click', () => {
     nameOfPiece.textContent = 'Engrenagem';
     PieceIsoCode.textContent = 'ISO 1328';
     pieceInformationDesc.textContent = 'A engrenagem é um componente mecânico que transmite movimento e força entre eixos através do contato de seus dentes.';
-    pieceWindow.style.animation = 'show 0.5s ease-in-out forwards';
-});
-
-EixoBtn.addEventListener('click', () => {
-    pieceModel.src = 'modelos/eixo.glb';
-    nameOfPiece.textContent = 'Eixo';
-    PieceIsoCode.textContent = 'ISO 286-1';
-    pieceInformationDesc.textContent = 'O eixo é um componente mecânico que serve como suporte para outros elementos, transmitindo torque e movimento rotacional.';
     pieceWindow.style.animation = 'show 0.5s ease-in-out forwards';
 });
 
