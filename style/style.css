@@ -338,7 +338,7 @@ main .add-piece-form label {
     align-self: flex-start;
 }
 
-main .add-piece-form button {
+main .add-piece-form button, main .add-piece-display #submitPiece {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px;
     background: #dc2626;
