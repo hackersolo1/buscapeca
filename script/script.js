@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Funções para adicionar peças 
 
-submPiece.addEventListener('click'() => {
+submPiece.addEventListener('click', () => {
     if(namePieceInput == '' && codePiece == '') {
     alert('As áreas precisam ser preenchidas!');
     return;
