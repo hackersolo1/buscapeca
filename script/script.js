@@ -55,6 +55,7 @@ closeAddPieceBtn.addEventListener('click', () => {
 });
 
 RoscBtn.addEventListener('click', () => {
+    pieceModel.style.display = 'block';
     pieceModel.src = 'modelos/rosca.glb';
     nameOfPiece.textContent = 'Rosca';
     PieceIsoCode.textContent = 'ISO 68-1';
@@ -63,6 +64,7 @@ RoscBtn.addEventListener('click', () => {
 });
 
 ParafBtn.addEventListener('click', () => {
+    pieceModel.style.display = 'block';
     pieceModel.src = 'modelos/parafusos.glb';
     nameOfPiece.textContent = 'Parafuso';
     PieceIsoCode.textContent = 'ISO 4014';
@@ -71,6 +73,7 @@ ParafBtn.addEventListener('click', () => {
 });
 
 EngreBtn.addEventListener('click', () => {
+    pieceModel.style.display = 'block';
     pieceModel.src = 'modelos/engrenagem.glb';
     nameOfPiece.textContent = 'Engrenagem';
     PieceIsoCode.textContent = 'ISO 1328';
@@ -79,6 +82,7 @@ EngreBtn.addEventListener('click', () => {
 });
 
 valvulaBtn.addEventListener('click', () => {
+    pieceModel.style.display = 'block';
     pieceModel.src = 'modelos/valvula.glb';
     nameOfPiece.textContent = 'Válvula';
     PieceIsoCode.textContent = 'ISO 5208';
@@ -87,6 +91,7 @@ valvulaBtn.addEventListener('click', () => {
 });
 
 pieceCloseBtn.addEventListener('click', () => {
+    pieceModel.style.display = 'none';
     pieceWindow.style.animation = 'unshow 0.5s ease-in-out forwards';
     pieceModel.src = '';
 });
