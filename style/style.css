@@ -510,6 +510,10 @@ main .pieceWindow .apresentation .iframeCont .model3D {
     border-radius: 12px;
 }
 
+main .pieceWindow .apresentation .iframeCont #default-poster {
+    z-index: -2;
+}
+
 main .pieceWindow .apresentation .informationContainer {
     width: 100%;
     max-width: 800px;
