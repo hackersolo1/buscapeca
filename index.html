@@ -18,9 +18,7 @@
         <input type="text" placeholder="Buscar peças..." class="search-input" />
         <button class="search-btn">🔍</button>
       </div>
-      <div class="account-container">
-        <button id="login">Adicionar peças</button>
-      </div>
+
     </div>
   </header>
   <main>
@@ -54,44 +52,6 @@
         <p>ISO 5996</p>
         <button id="valvula">Ver mais</button>
       </div>
-    </div>
-
-    <!-- Login display -->
-    <div class="login-window">
-      <h2>Fazer login</h2>
-      <form>
-        <div class="nome">
-          <label for="nome">Usuário</label>
-          <input type="text" name="nome" id="nameInput" />
-        </div>
-        <div class="senha">
-          <label for="senha">Senha</label>
-          <input type="password" name="senha" id="passInput" />
-        </div>
-      </form>
-      <button id="verifyLogin">Fazer Login</button>
-      <button id="closeLogin">Fechar</button>
-    </div>
-
-    <!-- Add piece display -->
-    <div class="add-piece-display">
-      <form class="add-piece-form">
-        <label for="piece-name">Nome da peça:</label>
-        <input type="text" id="piece-name" name="piece-name" required>
-
-        <label for="pieceIso">Código ISO da peça:</label>
-        <input type="number" name="pieceIso" id="piece-iso-code">
-
-        <label for="piece-model">Modelo 3D (URL do GLB):</label>
-
-        <div class="model-dropzone" role="button" tabindex="0" aria-label="Adicionar 3D" data-target="piece-model">
-          <span class="model-dropzone-text">Adicionar 3D</span>
-        </div>
-        <input type="url" id="piece-model" name="piece-model" class="hidden-model-input" aria-hidden="true" hidden>
-
-      </form>
-      <button id="submitPiece">Adicioanar peça</button>
-      <button id="closeAddPiece">Fechar</button>
     </div>
 
     <!-- Piece display -->
