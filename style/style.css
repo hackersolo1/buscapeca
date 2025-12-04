@@ -48,6 +48,7 @@ header {
     width: 100%;
     max-width: 1400px;
     padding: 0 20px;
+    height: 70px;
 }
 
 header h1 {
@@ -320,6 +321,7 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
         flex-direction: column;
         gap: 15px;
         padding: 10px 16px;
+        height: 140px;
     }
 
     .search-container {
@@ -377,6 +379,7 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
     .header-content {
         flex-direction: column;
         gap: 12px;
+        height: 140px;
     }
 
     header h1 {
@@ -447,10 +450,14 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
         font-size: 16px;
         padding: 10px 20px;
         margin-top: 15px;
-    }  
+    }
 }
 
 @media (max-width: 360px) {
+    .header-content {
+        height: 140px;
+    }
+
     header h1 {
         font-size: 24px;
     }
