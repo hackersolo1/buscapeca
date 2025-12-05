@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const nomePeca = container.querySelector('h1').textContent.toLowerCase();
             const codigoISO = container.querySelector('p').textContent.toLowerCase();
 
-            // Verifica se o termo de busca está no nome ou no código ISO
             if (nomePeca.includes(termoBusca) || codigoISO.includes(termoBusca)) {
                 container.style.display = 'flex';
             } else {
