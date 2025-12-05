@@ -14,6 +14,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const pieceInformationDesc = document.querySelector('#pieceInformationDesc');
     const pieceCloseBtn = document.querySelector('#closePieceWindow');
 
+    // Search elements
+    const searchInput = document.querySelector('.search-input');
+    const searchBtn = document.querySelector('.search-btn');
+    const itemContainers = document.querySelectorAll('.item-container');
+
+    function buscarPecas() {
+        const termoBusca = searchInput.value.toLowerCase().trim();
+
+        itemContainers.forEach(container => {
+            const nomePeca = container.querySelector('h1').textContent.toLowerCase();
+            const codigoISO = container.querySelector('p').textContent.toLowerCase();
+
+            // Verifica se o termo de busca está no nome ou no código ISO
+            if (nomePeca.includes(termoBusca) || codigoISO.includes(termoBusca)) {
+                container.style.display = 'flex';
+            } else {
+                container.style.display = 'none'; 
+            }
+        });
+    }
+
+    searchBtn.addEventListener('click', buscarPecas);
+
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            buscarPecas();
+        }
+    });
+
     RoscBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/rosca.glb';
