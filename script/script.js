@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const EngreBtn = document.querySelector('#engre');
     const valvulaBtn = document.querySelector('#valvula');
 
+    // Not found text
+    const notFoundText = document.querySelector('.notFound');
+
     // Piece Information Window Elements
     const pieceWindow = document.querySelector('.pieceWindow');
     const closePieceBtn = document.querySelector('#closePieceWindow');
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.style.display = 'flex';
             } else {
                 container.style.display = 'none'; 
+                notFoundText.style.display = 'block';
             }
         });
     }

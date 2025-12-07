@@ -171,6 +171,13 @@ main .main-container .item-container button:hover {
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
 }
 
+main .main-container .notFound {
+    font-family: 'Space Grotesk';
+    color: gray;
+    display: none;
+    opacity: 0.5;
+}
+
 @keyframes show {
     from {
         opacity: 0;
