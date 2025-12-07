@@ -172,10 +172,12 @@ main .main-container .item-container button:hover {
 }
 
 main .main-container .notFound {
-    font-family: 'Space Grotesk';
+    font-family: "Space Grotesk";
     color: gray;
     display: none;
     opacity: 0.5;
+    font-size: 24px;
+    text-align: center;
 }
 
 @keyframes show {
