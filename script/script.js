@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     RoscBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/rosca.glb';
+        pieceModel.setAttribute('auto-rotate', 'true');
+        pieceModel.setAttribute('camera-controls', 'true');
         nameOfPiece.textContent = 'Rosca';
         PieceIsoCode.textContent = 'ISO 68-1';
         pieceInformationDesc.textContent = 'A rosca é um elemento de fixação utilizado para unir componentes mecânicos, permitindo desmontagem e montagem repetidas.';
@@ -58,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ParafBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/parafusos.glb';
+        pieceModel.setAttribute('auto-rotate', 'true');
+        pieceModel.setAttribute('camera-controls', 'true');
         nameOfPiece.textContent = 'Parafuso';
         PieceIsoCode.textContent = 'ISO 4014';
         pieceInformationDesc.textContent = 'O parafuso é um elemento de fixação que utiliza uma rosca externa para unir peças, sendo amplamente utilizado em diversas aplicações mecânicas.';
@@ -67,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     EngreBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/engrenagem.glb';
+        pieceModel.setAttribute('auto-rotate', 'true');
+        pieceModel.setAttribute('camera-controls', 'true');
         nameOfPiece.textContent = 'Engrenagem';
         PieceIsoCode.textContent = 'ISO 1328';
         pieceInformationDesc.textContent = 'A engrenagem é um componente mecânico que transmite movimento e força entre eixos através do contato de seus dentes.';
@@ -76,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
     valvulaBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/valvula.glb';
+        pieceModel.setAttribute('auto-rotate', 'true');
+        pieceModel.setAttribute('camera-controls', 'true');
         nameOfPiece.textContent = 'Válvula';
         PieceIsoCode.textContent = 'ISO 5996';
         pieceInformationDesc.textContent = 'A válvula é um dispositivo utilizado para controlar o fluxo de fluidos em sistemas hidráulicos e pneumáticos.';
@@ -86,5 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pieceModel.style.display = 'none';
         pieceWindow.style.animation = 'unshow 0.5s ease-in-out forwards';
         pieceModel.src = '';
+        pieceModel.removeAttribute('auto-rotate');
+        pieceModel.removeAttribute('camera-controls');
     });
 });
