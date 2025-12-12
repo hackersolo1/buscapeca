@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/valvula.glb';
         nameOfPiece.textContent = 'Válvula';
-        PieceIsoCode.textContent = 'ISO 5208';
+        PieceIsoCode.textContent = 'ISO 5996';
         pieceInformationDesc.textContent = 'A válvula é um dispositivo utilizado para controlar o fluxo de fluidos em sistemas hidráulicos e pneumáticos.';
         pieceWindow.style.animation = 'show 0.5s ease-in-out forwards';
     });
