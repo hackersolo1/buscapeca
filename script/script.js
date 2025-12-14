@@ -90,26 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
         pieceWindow.style.animation = 'show 0.5s ease-in-out forwards';
     });
 
-    pieceCloseBtn.addEventListener('click', () => {
+    pieceCloseBtn.addEventListener('click', () => {   
         pieceWindow.style.animation = 'unshow 0.5s ease-in-out forwards';
-        // O reset do model-viewer deve ser feito após a animação de fechamento.
-        // Usaremos um timeout para simular o fim da animação de 0.5s
-        setTimeout(() => {
-            pieceWindow.style.display = 'none';
-            pieceModel.src = '';
-            pieceModel.removeAttribute('auto-rotate');
-            pieceModel.removeAttribute('camera-controls');
-        }, 500);
+        pieceModel.src = 'none';
+        nameOfPiece.textContent = '';
+        PieceIsoCode.textContent = '';
+        pieceInformationDesc.textContent = '';
+        pieceModel.setAttribute('camera-controls', '');
+        pieceModel.style.display = 'none';
     });
-
-    // Removendo o listener de animationend, pois o timeout é mais simples e direto
-    // para esta animação de duração fixa.
-    // pieceWindow.addEventListener('animationend', (e) => {
-    //     if (e.animationName === 'unshow') {
-    //         pieceWindow.style.display = 'none';
-    //         pieceModel.src = '';
-    //         pieceModel.removeAttribute('auto-rotate');
-    //         pieceModel.removeAttribute('camera-controls');
-    //     }
-    // });
+    
 });
