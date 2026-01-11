@@ -16,41 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const PieceIsoCode = document.querySelector('#PieceIsoCode');
     const pieceInformationDesc = document.querySelector('#pieceInformationDesc');
     const pieceCloseBtn = document.querySelector('#closePieceWindow');
+    const autoRotateBtn = document.querySelector('#autoRotate');
 
     // Search elements
     const searchInput = document.querySelector('.search-input');
     const searchBtn = document.querySelector('.search-btn');
     const itemContainers = document.querySelectorAll('.item-container');
 
-    function buscarPecas() {
-        const termoBusca = searchInput.value.toLowerCase().trim();
+    searchInput.addEventListener('input', () => {
+        const inputValue = searchInput.value.toLowerCase();
 
-        itemContainers.forEach(container => {
-            const nomePeca = container.querySelector('h1').textContent.toLowerCase();
-            const codigoISO = container.querySelector('p').textContent.toLowerCase();
-
-            if (nomePeca.includes(termoBusca) || codigoISO.includes(termoBusca)) {
-                container.style.display = 'flex';
+        itemContainers.forEach(item => {
+            if(item.textContent.toLowerCase().includes(inputValue)) {
+                item.style.display = 'flex';
             } else {
-                container.style.display = 'none'; 
-                notFoundText.style.display = 'block';
+                item.style.display = 'none';
             }
-        });
-    }
+        })
+    })
 
-    searchBtn.addEventListener('click', buscarPecas);
-
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            buscarPecas();
-        }
-    });
 
     RoscBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/rosca.glb';
-        pieceModel.setAttribute('auto-rotate', 'true');
-        pieceModel.setAttribute('camera-controls', 'true');
         nameOfPiece.textContent = 'Rosca';
         PieceIsoCode.textContent = 'ISO 68-1';
         pieceInformationDesc.textContent = 'A rosca é um elemento de fixação utilizado para unir componentes mecânicos, permitindo desmontagem e montagem repetidas.';
@@ -60,8 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ParafBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/parafusos.glb';
-        pieceModel.setAttribute('auto-rotate', 'true');
-        pieceModel.setAttribute('camera-controls', 'true');
         nameOfPiece.textContent = 'Parafuso';
         PieceIsoCode.textContent = 'ISO 4014';
         pieceInformationDesc.textContent = 'O parafuso é um elemento de fixação que utiliza uma rosca externa para unir peças, sendo amplamente utilizado em diversas aplicações mecânicas.';
@@ -71,8 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     EngreBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/engrenagem.glb';
-        pieceModel.setAttribute('auto-rotate', 'true');
-        pieceModel.setAttribute('camera-controls', 'true');
         nameOfPiece.textContent = 'Engrenagem';
         PieceIsoCode.textContent = 'ISO 1328';
         pieceInformationDesc.textContent = 'A engrenagem é um componente mecânico que transmite movimento e força entre eixos através do contato de seus dentes.';
@@ -82,8 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     valvulaBtn.addEventListener('click', () => {
         pieceModel.style.display = 'block';
         pieceModel.src = 'modelos/valvula.glb';
-        pieceModel.setAttribute('auto-rotate', 'true');
-        pieceModel.setAttribute('camera-controls', 'true');
         nameOfPiece.textContent = 'Válvula';
         PieceIsoCode.textContent = 'ISO 5996';
         pieceInformationDesc.textContent = 'A válvula é um dispositivo utilizado para controlar o fluxo de fluidos em sistemas hidráulicos e pneumáticos.';
@@ -99,5 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
         pieceModel.setAttribute('camera-controls', '');
         pieceModel.style.display = 'none';
     });
-    
+
+    autoRotateBtn.addEventListener('click', () => {
+        if(pieceModel.hasAttribute('auto-rotate')) {
+            pieceModel.removeAttribute('auto-rotate');
+            autoRotateBtn.textContent = 'Iniciar auto rotação';
+        } else {
+            pieceModel.setAttribute('auto-rotate', '');
+            autoRotateBtn.textContent = 'Parar auto rotação';
+        }
+    });
 });

@@ -495,3 +495,21 @@ main .pieceWindow .apresentation .informationContainer #closePieceWindow:hover {
         font-size: 13px;
     }
 }
+
+main .pieceWindow .apresentation .iframeCont button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    background: #dc2626;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+main .pieceWindow .apresentation .iframeCont button:hover {
+    background: #b91c1c;
+    transform: scale(1.05);
+}
